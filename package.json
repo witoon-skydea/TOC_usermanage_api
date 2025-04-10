@@ -1,0 +1,40 @@
+{
+  "name": "toc_usermanage_api",
+  "version": "1.0.0",
+  "description": "User Management API for TOC services",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "seed": "node src/utils/seeder.js",
+    "seed:admin": "node src/utils/seedAdmin.js",
+    "test": "jest"
+  },
+  "keywords": [
+    "api",
+    "user-management",
+    "mongodb",
+    "express",
+    "nodejs"
+  ],
+  "author": "TOC Development Team",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.1",
+    "helmet": "^7.0.0",
+    "joi": "^17.10.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.5.3",
+    "morgan": "^1.10.0",
+    "winston": "^3.10.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.1",
+    "supertest": "^6.3.3"
+  }
+}
