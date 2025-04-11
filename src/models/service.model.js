@@ -16,13 +16,20 @@ const serviceSchema = new mongoose.Schema({
   },
   apiKey: {
     type: String,
-    required: [true, 'API key is required'],
-    unique: true
+    unique: true,
+    default: function() {
+      if (this.name) {
+        return `toc_${this.name.toLowerCase().replace(/[^a-z0-9]/g, '_')}_${require('crypto').randomBytes(8).toString('hex')}`;
+      }
+      return null;
+    }
   },
   apiSecret: {
     type: String,
-    required: [true, 'API secret is required'],
-    select: false // API secret will not be returned in queries by default
+    select: false, // API secret will not be returned in queries by default
+    default: function() {
+      return `toc_${require('crypto').randomBytes(16).toString('hex')}`;
+    }
   },
   callbackUrl: {
     type: String,

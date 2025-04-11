@@ -9,7 +9,7 @@ const userServiceSchema = new mongoose.Schema({
   serviceId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Service',
-    required: [true, 'Service ID is required']
+    default: null
   },
   roles: [{
     type: mongoose.Schema.Types.ObjectId,
